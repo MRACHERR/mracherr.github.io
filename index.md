@@ -2,7 +2,7 @@
 layout: null
 ---
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +23,7 @@ layout: null
             
             <div class="text-center md:text-left flex-1">
                 <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Anass Cherraqi</h1>
-                <p class="text-2xl text-emerald-400 mt-3 font-semibold">Ingénieur Cybersécurité & Analyste SOC</p>
+                <p class="text-2xl text-emerald-400 mt-3 font-semibold">Cybersecurity Engineer & SOC Analyst</p>
                 
                 <!-- Social & Contact Links -->
                 <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
@@ -47,10 +47,10 @@ layout: null
         <!-- General Overview / About Me -->
         <section class="bg-slate-800 p-8 rounded-2xl shadow-xl border border-slate-700">
             <h2 class="text-2xl font-bold text-white mb-5 flex items-center gap-3">
-                <i class="fas fa-shield-alt text-emerald-500"></i> Profil & Philosophie
+                <i class="fas fa-shield-alt text-emerald-500"></i> Profile & Philosophy
             </h2>
             <p class="text-slate-300 leading-relaxed text-lg text-justify">
-                Passionné par la cybersécurité défensive, j'évolue en tant qu'Analyste SOC et Ingénieur Sécurité avec une expertise pointue dans la protection des infrastructures IT et OT. Mon approche se concentre sur la surveillance proactive, le <em>threat hunting</em> et la réponse à incident (DFIR). En m'appuyant sur des technologies avancées de détection (SIEM, EDR) et des référentiels reconnus comme le framework MITRE ATT&CK, je transforme la télémétrie réseau complexe en intelligence exploitable. Mon objectif est d'anticiper les menaces, de réduire les faux positifs et de garantir une résilience maximale des systèmes d'information face aux cyberattaques.
+                Passionate about defensive cybersecurity, I thrive as a SOC Analyst and Security Engineer with deep expertise in protecting IT and OT infrastructures. My approach focuses on proactive monitoring, threat hunting, and incident response (DFIR). Leveraging advanced detection technologies (SIEM, EDR) and recognized frameworks like MITRE ATT&CK, I transform complex network telemetry into actionable intelligence. My goal is to anticipate threats, reduce false positives, and ensure maximum resilience of information systems against cyberattacks.
             </p>
         </section>
 
@@ -106,26 +106,26 @@ layout: null
                 <!-- Technical Skills -->
                 <section class="bg-slate-800 p-6 rounded-2xl shadow-xl border border-slate-700">
                     <h2 class="text-xl font-bold text-white mb-5 border-b border-slate-700 pb-3 flex items-center gap-2">
-                        <i class="fas fa-laptop-code text-emerald-500"></i> Compétences
+                        <i class="fas fa-laptop-code text-emerald-500"></i> Skills
                     </h2>
                     <div class="space-y-4 text-sm text-slate-300">
                         <div>
-                            <strong class="text-white block mb-1">SIEM & Détection</strong>
+                            <strong class="text-white block mb-1">SIEM & Detection</strong>
                             <span class="bg-slate-700 px-2 py-1 rounded text-xs mr-1">Splunk</span>
                             <span class="bg-slate-700 px-2 py-1 rounded text-xs mr-1">ELK Stack</span>
                         </div>
                         <div>
-                            <strong class="text-white block mb-1">Threat Hunting & Analyse</strong>
+                            <strong class="text-white block mb-1">Threat Hunting & Analysis</strong>
                             <span class="bg-slate-700 px-2 py-1 rounded text-xs mr-1">MITRE ATT&CK</span>
                             <span class="bg-slate-700 px-2 py-1 rounded text-xs mr-1">Cyber Kill Chain</span>
                         </div>
                         <div>
-                            <strong class="text-white block mb-1">Réseau & SOAR</strong>
+                            <strong class="text-white block mb-1">Network & SOAR</strong>
                             <span class="bg-slate-700 px-2 py-1 rounded text-xs mr-1">Suricata / Snort</span>
                             <span class="bg-slate-700 px-2 py-1 rounded text-xs mr-1">Wireshark</span>
                         </div>
                         <div>
-                            <strong class="text-white block mb-1">Langages & Systèmes</strong>
+                            <strong class="text-white block mb-1">Languages & Systems</strong>
                             <span class="bg-slate-700 px-2 py-1 rounded text-xs mr-1">Python</span>
                             <span class="bg-slate-700 px-2 py-1 rounded text-xs mr-1">Bash / PowerShell</span>
                         </div>
@@ -139,7 +139,7 @@ layout: null
                 <!-- Experience -->
                 <section class="bg-slate-800 p-8 rounded-2xl shadow-xl border border-slate-700">
                     <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                        <i class="fas fa-briefcase text-emerald-500"></i> Expériences Professionnelles
+                        <i class="fas fa-briefcase text-emerald-500"></i> Professional Experience
                     </h2>
                     
                     <div class="space-y-8 relative before:absolute before:inset-0 before:ml-2 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-600 before:to-transparent">
@@ -149,12 +149,12 @@ layout: null
                             <div class="flex items-center justify-center w-5 h-5 rounded-full border-4 border-slate-800 bg-emerald-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 ml-1 md:ml-0"></div>
                             <div class="w-[calc(100%-2rem)] md:w-[calc(50%-1.5rem)] p-4 rounded-xl border border-slate-700 bg-slate-800/50 hover:bg-slate-700/50 transition">
                                 <div class="flex items-center justify-between mb-1">
-                                    <h3 class="font-bold text-white">Consultant Cybersécurité</h3>
+                                    <h3 class="font-bold text-white">Cybersecurity Consultant</h3>
                                 </div>
                                 <span class="text-emerald-400 text-xs font-semibold mb-2 block">OCP Group | Mar 2026 - Jul 2026</span>
                                 <ul class="list-disc list-inside text-sm text-slate-300 space-y-1">
-                                    <li>Audit d'environnement industriel (C2M2).</li>
-                                    <li>Conception de segmentation réseau (IEC 62443).</li>
+                                    <li>Industrial environment audit (C2M2).</li>
+                                    <li>Secure network segmentation design (IEC 62443).</li>
                                 </ul>
                             </div>
                         </div>
@@ -164,12 +164,12 @@ layout: null
                             <div class="flex items-center justify-center w-5 h-5 rounded-full border-4 border-slate-800 bg-emerald-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 ml-1 md:ml-0"></div>
                             <div class="w-[calc(100%-2rem)] md:w-[calc(50%-1.5rem)] p-4 rounded-xl border border-slate-700 bg-slate-800/50 hover:bg-slate-700/50 transition">
                                 <div class="flex items-center justify-between mb-1">
-                                    <h3 class="font-bold text-white">Analyste SOC</h3>
+                                    <h3 class="font-bold text-white">SOC Analyst</h3>
                                 </div>
-                                <span class="text-emerald-400 text-xs font-semibold mb-2 block">IMS Technology | Fév 2024 - Jul 2024</span>
+                                <span class="text-emerald-400 text-xs font-semibold mb-2 block">IMS Technology | Feb 2024 - Jul 2024</span>
                                 <ul class="list-disc list-inside text-sm text-slate-300 space-y-1">
-                                    <li>Surveillance et triage d'alertes via Splunk et ELK.</li>
-                                    <li>Développement de règles de détection.</li>
+                                    <li>Alert monitoring and triage via Splunk and ELK.</li>
+                                    <li>Development of detection rules.</li>
                                 </ul>
                             </div>
                         </div>
@@ -186,7 +186,7 @@ layout: null
                         {% for post in site.posts %}
                         <a href="{{ post.url | relative_url }}" class="block bg-slate-900/50 p-5 rounded-xl border border-slate-700 hover:border-emerald-500 hover:bg-slate-700 transition shadow-sm group">
                             <div class="flex justify-between items-center mb-2">
-                                <span class="text-emerald-400 text-xs font-bold uppercase tracking-wider"><i class="far fa-calendar-alt mr-1"></i> {{ post.date | date: "%d %B %Y" }}</span>
+                                <span class="text-emerald-400 text-xs font-bold uppercase tracking-wider"><i class="far fa-calendar-alt mr-1"></i> {{ post.date | date: "%B %d, %Y" }}</span>
                                 <i class="fas fa-arrow-right text-slate-500 group-hover:text-emerald-400 transition"></i>
                             </div>
                             <h3 class="text-lg font-bold text-white">{{ post.title }}</h3>
@@ -196,7 +196,7 @@ layout: null
                         {% if site.posts.size == 0 %}
                         <div class="text-center py-8">
                             <i class="fas fa-ghost text-4xl text-slate-600 mb-3 block"></i>
-                            <p class="text-slate-400 italic">Aucun article publié pour le moment. Revenez bientôt !</p>
+                            <p class="text-slate-400 italic">No articles published yet. Check back soon!</p>
                         </div>
                         {% endif %}
                     </div>
@@ -207,7 +207,7 @@ layout: null
     </main>
 
     <footer class="border-t border-slate-800 mt-12 py-8 text-center text-slate-500 text-sm">
-        <p>&copy; 2026 Anass Cherraqi. Construit avec GitHub Pages & Tailwind CSS.</p>
+        <p>&copy; 2026 Anass Cherraqi. Built with GitHub Pages & Tailwind CSS.</p>
     </footer>
 
 </body>
