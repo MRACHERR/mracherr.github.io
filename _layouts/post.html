@@ -1,30 +1,54 @@
 ---
-layout: default
+layout: null
 ---
-<link href="/css/override.css" rel="stylesheet" type="text/css">
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | Anass Cherraqi</title>
+    
+    <link rel="icon" type="image/png" href="https://github.com/mracherr.png">
+    
+    <!-- Load Tailwind WITH the Typography plugin for styling Markdown content -->
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-slate-900 text-slate-300 font-sans antialiased leading-relaxed">
 
-  <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
-    <p class="post-meta">
-      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        {{ page.date | date: date_format }}
-      </time>
-      {% assign author = page.author | default: site.author %}
-      {%- if author -%}
-        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ author }}</span></span>
-      {%- endif -%}</p>
-  </header>
+    <!-- Simple Navigation Bar -->
+    <header class="bg-slate-800 border-b border-slate-700 py-6 shadow-lg">
+        <div class="max-w-4xl mx-auto px-6 flex justify-between items-center">
+            <a href="{{ '/' | relative_url }}" class="text-emerald-400 hover:text-emerald-300 transition flex items-center gap-2 font-bold tracking-wide">
+                <i class="fas fa-arrow-left"></i> Retour au Profil
+            </a>
+            <img src="https://github.com/mracherr.png" alt="Anass Cherraqi" class="w-10 h-10 rounded-full border-2 border-emerald-500 shadow-md">
+        </div>
+    </header>
 
-  <div class="share-links">
-    {% include sharelinks.html %}
-  </div>
+    <!-- Post Content Container -->
+    <main class="max-w-4xl mx-auto px-6 py-12">
+        
+        <!-- Post Header Info -->
+        <div class="mb-12 text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-4">{{ page.title }}</h1>
+            <div class="text-slate-400 flex items-center justify-center gap-4 text-sm font-medium">
+                <span><i class="far fa-calendar-alt text-emerald-500 mr-1"></i> {{ page.date | date: "%B %d, %Y" }}</span>
+                <span><i class="fas fa-user-shield text-emerald-500 mr-1"></i> Anass Cherraqi</span>
+            </div>
+        </div>
 
-  <div class="post-content e-content" itemprop="articleBody">
-    {{ content }}
-    {% include navlinks.html %}
-  </div>
+        <!-- The Markdown Content (Injected by Jekyll) -->
+        <!-- The 'prose prose-invert' classes magically style all your raw Markdown text into a beautiful dark theme -->
+        <article class="prose prose-invert prose-emerald prose-lg max-w-none bg-slate-800 p-8 md:p-12 rounded-2xl shadow-xl border border-slate-700">
+            {{ content }}
+        </article>
+        
+    </main>
 
-  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
-</article>
+    <footer class="border-t border-slate-800 mt-12 py-8 text-center text-slate-500 text-sm">
+        <p>&copy; 2026 Anass Cherraqi. Built with GitHub Pages & Tailwind CSS.</p>
+    </footer>
+
+</body>
+</html>
