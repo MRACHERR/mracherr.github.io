@@ -141,7 +141,7 @@ layout: null
             <!-- Right Column: Experience & Blog -->
             <div class="md:col-span-2 space-y-10">
                 
-                <!-- Experience -->
+               " <!-- Experience -->
                 <section class="bg-slate-800 p-8 rounded-2xl shadow-xl border border-slate-700">
                     <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
                         <i class="fas fa-briefcase text-emerald-500"></i> Professional Experience
@@ -179,7 +179,7 @@ layout: null
                             </div>
                         </div>
                     </div>
-                </section>
+                </section>"
 
                 <!-- Blog Archive (Dynamic Jekyll Integration) -->
                 <section class="bg-slate-800 p-8 rounded-2xl shadow-xl border border-slate-700">
