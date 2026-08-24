@@ -54,7 +54,6 @@ layout: null
             </h2>
             <p class="text-slate-300 leading-relaxed text-lg text-justify">
                 Passionate about defensive cybersecurity, I thrive as a SOC Analyst and Security Engineer with deep expertise in protecting IT and OT infrastructures.
-                <br><br>
                 Beyond my daily operations, I am an active Capture The Flag (CTF) player and avid HackTheBox competitor. Participating in these rigorous competitions allows me to continuously sharpen both my offensive and defensive mindset, staying ahead of emerging real-world attack vectors. My ultimate goal is to anticipate threats, reduce false positives, and ensure maximum resilience of information systems against cyberattacks.
             </p>
         </section>
