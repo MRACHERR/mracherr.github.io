@@ -36,7 +36,7 @@ layout: null
                     <a href="https://linkedin.com/in/anass-cherraqi" target="_blank" class="flex items-center gap-2 bg-slate-700 hover:bg-[#0A66C2] text-white px-5 py-2.5 rounded-lg transition shadow-md font-medium">
                         <i class="fab fa-linkedin"></i> LinkedIn
                     </a>
-                    <a href="https://app.hackthebox.com/users/anass123" target="_blank" class="flex items-center gap-2 bg-slate-700 hover:bg-[#9FEF00] hover:text-slate-900 text-white px-5 py-2.5 rounded-lg transition shadow-md font-medium">
+                    <a href="https://app.hackthebox.com/users/1061518" target="_blank" class="flex items-center gap-2 bg-slate-700 hover:bg-[#9FEF00] hover:text-slate-900 text-white px-5 py-2.5 rounded-lg transition shadow-md font-medium">
                         <i class="fas fa-cube"></i> HackTheBox
                     </a>
                 </div>
