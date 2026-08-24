@@ -32,7 +32,7 @@ layout: null
             
             <div class="text-center md:text-left flex-1">
                 <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight">Anass Cherraqi</h1>
-                <p class="text-2xl text-emerald-400 mt-3 font-semibold">Cybersecurity Engineer & SOC Analyst</p>
+                <p class="text-2xl text-emerald-400 mt-3 font-semibold">Cybersecurity & Network Geek</p>
                 
                 <!-- Social & Contact Links -->
                 <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
