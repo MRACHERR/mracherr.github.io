@@ -62,6 +62,42 @@ layout: null
             
             <!-- Left Column: Certifications & Skills -->
             <div class="space-y-10">
+
+                <!-- Technical Skills -->
+                <!-- Technical Skills -->
+                <section class="bg-slate-800 p-6 rounded-2xl shadow-xl border border-slate-700">
+                    <h2 class="text-xl font-bold text-white mb-5 border-b border-slate-700 pb-3 flex items-center gap-2">
+                        <i class="fas fa-laptop-code text-emerald-500"></i> Skills
+                    </h2>
+                    <div class="space-y-4 text-sm text-slate-300">
+                        <div>
+                            <strong class="text-white block mb-1">SIEM & Detection</strong>
+                            <span class="bg-slate-700 px-2 py-1 rounded text-xs mr-1 inline-block mb-1">Splunk</span>
+                            <span class="bg-slate-700 px-2 py-1 rounded text-xs mr-1 inline-block mb-1">ELK Stack</span>
+                        </div>
+                        <div>
+                            <strong class="text-white block mb-1">Threat Hunting & Analysis</strong>
+                            <span class="bg-slate-700 px-2 py-1 rounded text-xs mr-1 inline-block mb-1">MITRE ATT&CK</span>
+                            <span class="bg-slate-700 px-2 py-1 rounded text-xs mr-1 inline-block mb-1">Cyber Kill Chain</span>
+                        </div>
+                        <div>
+                            <strong class="text-white block mb-1">Pentesting & Reverse Eng.</strong>
+                            <span class="bg-slate-700 px-2 py-1 rounded text-xs mr-1 inline-block mb-1">Burp Suite</span>
+                            <span class="bg-slate-700 px-2 py-1 rounded text-xs mr-1 inline-block mb-1">Ghidra</span>
+                            <span class="bg-slate-700 px-2 py-1 rounded text-xs mr-1 inline-block mb-1">x64dbg</span>
+                        </div>
+                        <div>
+                            <strong class="text-white block mb-1">Network & SOAR</strong>
+                            <span class="bg-slate-700 px-2 py-1 rounded text-xs mr-1 inline-block mb-1">Suricata / Snort</span>
+                            <span class="bg-slate-700 px-2 py-1 rounded text-xs mr-1 inline-block mb-1">Wireshark</span>
+                        </div>
+                        <div>
+                            <strong class="text-white block mb-1">Languages & Systems</strong>
+                            <span class="bg-slate-700 px-2 py-1 rounded text-xs mr-1 inline-block mb-1">Python</span>
+                            <span class="bg-slate-700 px-2 py-1 rounded text-xs mr-1 inline-block mb-1">Bash / PowerShell</span>
+                        </div>
+                    </div>
+                </section>
                 
                 <!-- Certifications -->
                 <section class="bg-slate-800 p-6 rounded-2xl shadow-xl border border-slate-700">
@@ -107,34 +143,7 @@ layout: null
                     </ul>
                 </section>
 
-                <!-- Technical Skills -->
-                <section class="bg-slate-800 p-6 rounded-2xl shadow-xl border border-slate-700">
-                    <h2 class="text-xl font-bold text-white mb-5 border-b border-slate-700 pb-3 flex items-center gap-2">
-                        <i class="fas fa-laptop-code text-emerald-500"></i> Skills
-                    </h2>
-                    <div class="space-y-4 text-sm text-slate-300">
-                        <div>
-                            <strong class="text-white block mb-1">SIEM & Detection</strong>
-                            <span class="bg-slate-700 px-2 py-1 rounded text-xs mr-1">Splunk</span>
-                            <span class="bg-slate-700 px-2 py-1 rounded text-xs mr-1">ELK Stack</span>
-                        </div>
-                        <div>
-                            <strong class="text-white block mb-1">Threat Hunting & Analysis</strong>
-                            <span class="bg-slate-700 px-2 py-1 rounded text-xs mr-1">MITRE ATT&CK</span>
-                            <span class="bg-slate-700 px-2 py-1 rounded text-xs mr-1">Cyber Kill Chain</span>
-                        </div>
-                        <div>
-                            <strong class="text-white block mb-1">Network & SOAR</strong>
-                            <span class="bg-slate-700 px-2 py-1 rounded text-xs mr-1">Suricata / Snort</span>
-                            <span class="bg-slate-700 px-2 py-1 rounded text-xs mr-1">Wireshark</span>
-                        </div>
-                        <div>
-                            <strong class="text-white block mb-1">Languages & Systems</strong>
-                            <span class="bg-slate-700 px-2 py-1 rounded text-xs mr-1">Python</span>
-                            <span class="bg-slate-700 px-2 py-1 rounded text-xs mr-1">Bash / PowerShell</span>
-                        </div>
-                    </div>
-                </section>
+              
             </div>
 
             <!-- Right Column: Experience & Blog -->
