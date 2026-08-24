@@ -36,6 +36,9 @@ layout: null
                     <a href="https://linkedin.com/in/anass-cherraqi" target="_blank" class="flex items-center gap-2 bg-slate-700 hover:bg-[#0A66C2] text-white px-5 py-2.5 rounded-lg transition shadow-md font-medium">
                         <i class="fab fa-linkedin"></i> LinkedIn
                     </a>
+                    <a href="https://app.hackthebox.com/users/anass123" target="_blank" class="flex items-center gap-2 bg-slate-700 hover:bg-[#9FEF00] hover:text-slate-900 text-white px-5 py-2.5 rounded-lg transition shadow-md font-medium">
+                        <i class="fas fa-cube"></i> HackTheBox
+                    </a>
                 </div>
             </div>
         </div>
@@ -50,7 +53,9 @@ layout: null
                 <i class="fas fa-shield-alt text-emerald-500"></i> Profile & Philosophy
             </h2>
             <p class="text-slate-300 leading-relaxed text-lg text-justify">
-                Passionate about defensive cybersecurity, I thrive as a SOC Analyst and Security Engineer with deep expertise in protecting IT and OT infrastructures. My approach focuses on proactive monitoring, threat hunting, and incident response (DFIR). Leveraging advanced detection technologies (SIEM, EDR) and recognized frameworks like MITRE ATT&CK, I transform complex network telemetry into actionable intelligence. My goal is to anticipate threats, reduce false positives, and ensure maximum resilience of information systems against cyberattacks.
+                Passionate about defensive cybersecurity, I thrive as a SOC Analyst and Security Engineer with deep expertise in protecting IT and OT infrastructures. My approach focuses on proactive monitoring, threat hunting, and incident response (DFIR). Leveraging advanced detection technologies (SIEM, EDR) and recognized frameworks like MITRE ATT&CK, I transform complex network telemetry into actionable intelligence. 
+                <br><br>
+                Beyond my daily operations, I am an active Capture The Flag (CTF) player and avid HackTheBox competitor. Participating in these rigorous competitions allows me to continuously sharpen both my offensive and defensive mindset, staying ahead of emerging real-world attack vectors. My ultimate goal is to anticipate threats, reduce false positives, and ensure maximum resilience of information systems against cyberattacks.
             </p>
         </section>
 
