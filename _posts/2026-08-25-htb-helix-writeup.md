@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "HackTheBox Writeup: Helix"
-thumbnail: "/assets/images/helix-htb/82422fbcdc42e7f275f2183d46ed5ee55ab413_MD5.jpg"
+thumbnail: "/assets/images/helix-htb/bcdc42e7f275f2183d46ed5ee55ab413_MD5.jpg"
 ---
 
 In this post, we dive into the **Helix** machine on HackTheBox. This box features a fantastic blend of traditional web exploitation and ICS/OT (Operational Technology) hacking. We start by exploiting a known H2 JDBC driver vulnerability (CVE-2023-34468) in Apache NiFi to gain initial access. For privilege escalation, we crack a protected PDF to interact with an internal OPC UA server, manipulating industrial control nodes to trigger a scheduled maintenance window and pop a root shell.
