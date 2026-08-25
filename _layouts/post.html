@@ -82,6 +82,88 @@ layout: null
     <footer class="border-t border-slate-800 mt-12 py-8 text-center text-slate-500 text-sm">
         <p>&copy; 2026 Anass Cherraqi. Built with GitHub Pages & Tailwind CSS.</p>
     </footer>
+    <!-- Minimalist Scroll Spy / Table of Contents -->
+    <div class="hidden xl:flex fixed left-8 lg:left-12 top-0 bottom-0 items-center z-50">
+        <nav id="toc-tracker" class="flex flex-col space-y-2.5 w-16" aria-label="Table of Contents Tracker"></nav>
+    </div>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const article = document.querySelector('article');
+        if (!article) return;
+
+        // Find all H2 and H3 headings inside the post content
+        const headings = Array.from(article.querySelectorAll('h2, h3'));
+        const tracker = document.getElementById('toc-tracker');
+
+        if (headings.length === 0) return;
+
+        // 1. Create the lines based on the headings
+        headings.forEach((heading, index) => {
+            // Jekyll automatically adds IDs to headings, but we double-check here
+            if (!heading.id) {
+                heading.id = heading.textContent.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+            }
+
+            const line = document.createElement('a');
+            line.href = `#${heading.id}`;
+            line.setAttribute('data-tag', heading.tagName.toLowerCase());
+            line.setAttribute('title', heading.textContent); // Hover to see section name!
+
+            // Base styling for the lines
+            line.className = 'block h-[3px] rounded-full transition-all duration-300 bg-slate-700 hover:bg-emerald-500 hover:w-10';
+            
+            if (heading.tagName.toLowerCase() === 'h2') {
+                line.classList.add('w-6'); // H2 lines are a bit wider
+            } else {
+                line.classList.add('w-3', 'ml-4'); // H3 lines are indented and shorter
+            }
+
+            tracker.appendChild(line);
+        });
+
+        const lines = tracker.querySelectorAll('a');
+
+        // 2. Function to check which section is currently active on scroll
+        const updateActiveLine = () => {
+            let currentId = headings[0]?.id; // Default to first heading
+            
+            // Find the heading currently scrolled past
+            headings.forEach((heading) => {
+                if (heading.getBoundingClientRect().top <= 150) {
+                    currentId = heading.id;
+                }
+            });
+
+            // Catch for the bottom of the page (highlights the last item)
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
+                currentId = headings[headings.length - 1].id;
+            }
+
+            // 3. Update the UI lines
+            lines.forEach((line) => {
+                const tag = line.getAttribute('data-tag');
+                
+                // Reset to default inactive state
+                line.classList.remove('bg-emerald-400', 'w-10', 'bg-slate-400');
+                line.classList.add('bg-slate-700');
+                if (tag === 'h2') line.classList.add('w-6');
+                else line.classList.add('w-3');
+
+                // Apply active state to the current section
+                if (line.getAttribute('href') === `#${currentId}`) {
+                    line.classList.remove('bg-slate-700', 'w-6', 'w-3');
+                    // Active line becomes bright green and much wider
+                    line.classList.add('bg-emerald-400', 'w-10'); 
+                }
+            });
+        };
+
+        // Listen for scrolling and run the tracker
+        window.addEventListener('scroll', updateActiveLine, { passive: true });
+        updateActiveLine(); // Run once immediately on load
+    });
+    </script>
 
 </body>
 </html>
