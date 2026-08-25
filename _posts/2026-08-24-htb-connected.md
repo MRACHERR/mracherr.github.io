@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "HackTheBox Writeup: Connected"
+thumbnail: "/assets/images/connected-htb/796e3356f295347e85d18ee582ae9529_MD5.jpg"
 ---
 
 In this post, we will walk through the exploitation of the **Connected** machine on HackTheBox. The attack path involves exploiting a vulnerability in FreePBX to gain our initial foothold, followed by abusing an insecure `incron` job to escalate our privileges to root.

@@ -199,7 +199,7 @@ layout: null
                 </section>
                 {% endcomment %}
 
-                <!-- Blog Archive (Dynamic Jekyll Integration) -->
+               <!-- Blog Archive (Dynamic Jekyll Integration) -->
                 <section class="bg-slate-800 p-8 rounded-2xl shadow-xl border border-slate-700">
                     <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
                         <i class="fas fa-terminal text-emerald-500"></i> Articles & Publications
@@ -207,12 +207,24 @@ layout: null
                     
                     <div class="grid grid-cols-1 gap-4">
                         {% for post in site.posts %}
-                        <a href="{{ post.url | relative_url }}" class="block bg-slate-900/50 p-5 rounded-xl border border-slate-700 hover:border-emerald-500 hover:bg-slate-700 transition shadow-sm group">
-                            <div class="flex justify-between items-center mb-2">
-                                <span class="text-emerald-400 text-xs font-bold uppercase tracking-wider"><i class="far fa-calendar-alt mr-1"></i> {{ post.date | date: "%B %d, %Y" }}</span>
-                                <i class="fas fa-arrow-right text-slate-500 group-hover:text-emerald-400 transition"></i>
+                        <a href="{{ post.url | relative_url }}" class="flex items-center gap-5 bg-slate-900/50 p-5 rounded-xl border border-slate-700 hover:border-emerald-500 hover:bg-slate-700 transition shadow-sm group">
+                            
+                            <!-- Thumbnail Image (Only shows if 'thumbnail' is set in front matter) -->
+                            {% if post.thumbnail %}
+                            <div class="shrink-0 hidden sm:block">
+                                <img src="{{ post.thumbnail | relative_url }}" alt="{{ post.title }}" class="w-24 h-24 md:w-32 md:h-24 object-cover rounded-lg border border-slate-600 shadow-md group-hover:border-emerald-500 transition">
                             </div>
-                            <h3 class="text-lg font-bold text-white">{{ post.title }}</h3>
+                            {% endif %}
+                            
+                            <!-- Post Text -->
+                            <div class="flex-1 min-w-0">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-emerald-400 text-xs font-bold uppercase tracking-wider"><i class="far fa-calendar-alt mr-1"></i> {{ post.date | date: "%B %d, %Y" }}</span>
+                                    <i class="fas fa-arrow-right text-slate-500 group-hover:text-emerald-400 transition"></i>
+                                </div>
+                                <h3 class="text-lg font-bold text-white">{{ post.title }}</h3>
+                            </div>
+                            
                         </a>
                         {% endfor %}
                         
