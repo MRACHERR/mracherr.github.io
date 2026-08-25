@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "HackTheBox Writeup: Fireflow"
-thumbnail: "/assets/images/fireflow-htb/e85c64990af8d57255692d6998d13861_MD5.jpg"
+thumbnail: "/assets/images/fireflow-htb/4da73bb9193b8046f8fac584110b33fa_MD5.jpg"
 ---
 
 In this post, we tackle the **Fireflow** machine on HackTheBox. The attack path starts with subdomain enumeration and application exploitation to gain an initial foothold. From there, we leverage hardcoded credentials and a JWT `alg: none` bypass to compromise a local API and escape into a Kubernetes pod. Finally, we abuse Kubernetes RBAC permissions and the kubelet's WebSocket API to escape the pod and achieve root access on the host node.
