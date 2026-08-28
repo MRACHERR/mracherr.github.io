@@ -8,7 +8,7 @@ In this post, we will walk through the exploitation of the **Connected** machine
 
 ---
 
-## 1. Enumeration
+## 1. Enumeration 
 
 We kick things off with a standard `nmap` scan to identify open ports and running services on the target machine.
 
