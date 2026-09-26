@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "HackTheBox Writeup: Trick"
-thumbnail: "/assets/images/trick-htb/20260924183437.png"
+thumbnail: "/assets/images/trick-htb/20260926160915.png"
 ---
 
 In this post, we work through the **Trick** machine on HackTheBox. We start by performing a DNS zone transfer to discover hidden subdomains. We then exploit a SQL injection vulnerability on a payroll application to read internal Nginx configuration files, which point us toward a second subdomain. On this marketing subdomain, a Local File Inclusion (LFI) vulnerability allows us to extract an SSH private key. Finally, we escalate to root by hijacking the action configuration of Fail2Ban and triggering a ban via SSH brute-forcing to spawn a SUID shell.
@@ -48,6 +48,8 @@ The zone transfer succeeds and reveals a hidden subdomain: **`preprod-payroll.tr
 ### SQL Injection (Payroll Subdomain)
 Browsing to the `preprod-payroll.trick.htb` login page, we intercept an authentication request. Basic manual testing with `username='+or+1%3D1--+&password=admin` successfully bypasses the login panel. 
 
+![SQL Injection Bypass](/assets/images/trick-htb/20260924183437.png)
+
 To automate data extraction, we pass the intercepted request to `sqlmap`:
 
 ```bash
@@ -87,6 +89,8 @@ We run `ffuf` against this new subdomain and discover it is vulnerable to Local 
 ....//....//....//....//....//....//etc/passwd [Status: 200, Size: 2351, Words: 28, Lines: 42]
 ```
 
+![LFI Enumeration](/assets/images/trick-htb/20260925184723.png)
+
 Knowing `michael` is a valid user, we leverage the LFI to read his SSH private key directly from his home directory:
 
 ```bash
@@ -119,6 +123,8 @@ michael@trick:~$ find / -group "security" 2>/dev/null
 ```
 
 Fail2Ban uses these `.conf` files to dictate what commands run when an IP is banned (e.g., executing `iptables` rules). Because we can edit these files and restart the service as root, we can hijack the ban action to execute arbitrary commands!
+
+![Fail2Ban Action Modification](/assets/images/trick-htb/20260926151336.png)
 
 We edit the default action file (`/etc/fail2ban/action.d/iptables-multiport.conf`) and replace the `actionban` variable with a command that creates a SUID bash binary in the `/tmp` directory:
 
@@ -153,5 +159,10 @@ michael@trick:/etc/fail2ban$ /tmp/bash -p
 bash-5.0# cat /root/root.txt
 a032040b330ed7c9694074dacb0ed777
 ```
+
+![Root Access](/assets/images/trick-htb/20260926152651.png)
+
+![result](/assets/images/trick-htb/20260926160915.png)
+
 
 Machine completely compromised!
